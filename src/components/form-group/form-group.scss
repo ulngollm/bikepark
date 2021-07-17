@@ -1,0 +1,17 @@
+.form-group {
+    &__label {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    &__input {
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

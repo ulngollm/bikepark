@@ -1,0 +1,7 @@
+mixin form-group(props)
+    label.form-group
+        span.label.form-group__label= props.label
+        .form-group__input
+            input.input&attributes(attributes)
+            if (attributes.type == 'password')
+                a.form-group__icon.icon.icon-password.js-password-toggle(href="#") 

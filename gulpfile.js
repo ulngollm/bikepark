@@ -13,10 +13,10 @@ const bulkSass = require('gulp-sass-bulk-import');
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
 const mergeQueries = require('postcss-merge-queries');
+const svgSprite = require('gulp-svg-sprite');
 
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
-const devip = require('dev-ip');
 
 function compileHtml() {
     return src('src/pages/**/*.pug')
@@ -34,14 +34,8 @@ function server() {
             baseDir: "./build/",
             ghostMode: false
         },
-        // host: devip()
     });
     watch("build/").on('change', browserSync.reload);
-}
-
-function assets() {
-    return src('assets/**/*')
-        .pipe(dest('build/assets/'));
 }
 
 function fonts() {
@@ -83,8 +77,29 @@ function watcher() {
 
 }
 
+function icons() {
+    return src('src/components/**/*.svg')
+        .pipe(svgSprite({
+            svg: {
+                xmlDeclaration: false,
+                doctypeDeclaration: false,
+                namespaceIDs: false,
+                namespaceIDPrefix: '',
+                namespaceClassnames: false,
+                dimensionAttributes: true
+            },
+            mode: {
+                symbol: {
+                    dest: './',
+                    sprite: 'icons.svg'
+                }
+            },
+        }))
+        .pipe(dest('build/'));
+}
+
 
 
 exports.server = parallel(server, watcher);
-exports.build = parallel(compileHtml, styles, fonts);
+exports.build = parallel(compileHtml, styles, fonts, icons);
 exports.styles = series(styles);

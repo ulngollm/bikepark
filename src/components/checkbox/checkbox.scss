@@ -1,0 +1,27 @@
+.checkbox{
+    display: flex;
+    align-items: center;
+    &__origin{
+        @extend .visually-hidden;
+    }
+    &__checkbox{
+        display: block;
+        @include box(32px);
+        margin-right: 15px;
+        border-radius: 10px;
+        border: 1px solid color(line);
+        transition: all 0.1s ease-in-out;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__label{
+        @include font(s, 500);
+    }
+    
+    &__origin:checked + &__checkbox{
+        background-color: color(main);
+        border-color: color(main);
+    }
+}

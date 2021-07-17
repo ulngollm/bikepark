@@ -1,5 +1,23 @@
 html {
     font-family: 'Montserrat', sans-serif;
     color: color(text);
-    @include font(m);
+    @include font(m,500);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
