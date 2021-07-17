@@ -1,0 +1,5 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: color(text);
+    @include font(m);
+}

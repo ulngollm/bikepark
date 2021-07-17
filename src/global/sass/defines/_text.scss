@@ -1,0 +1,20 @@
+:root {
+    --font-xl: 48px;
+    --font-l: 28px;
+    --font-m: 20px;
+    --font-basic: 18px;
+    --font-s: 16px;
+    --font-xs: 14px;
+}
+$font-sizes: (
+    xl: var(--font-xl),
+    l: var(--font-l),
+    m: var(--font-m),
+    basic: var(--font-basic),
+    s: var(--font-s),
+    xs: var(--font-xs)
+);
+
+@mixin font($size){
+    font-size: map-get($map: $font-sizes, $key: $size);
+}

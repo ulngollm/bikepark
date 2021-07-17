@@ -1,0 +1,53 @@
+.button {
+  display: inline-flex;
+  appearance: none;
+  min-width: 260px;
+  height: 60px;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+
+  @include font(m);
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  font-family: inherit;
+  font-weight: bold;
+
+  background-color: color(main);
+  color: white;
+
+  border-radius: 10px;
+  border: 1px solid color(main);
+
+  flex-shrink: 0;
+
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #005EFF;
+  }
+
+  &_light{
+    background-color: transparent;
+    color: color(main);
+    border-color: currentColor;
+    &:hover{
+      color: white;
+    }
+  }
+  &_compact{
+    min-width: unset;
+    height: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    @include font(s);
+  }
+
+  
+
+
+}

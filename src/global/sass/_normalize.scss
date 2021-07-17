@@ -1,0 +1,20 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+fieldset{
+    border: none;
+}
+button{
+    appearance: none;
+    border: none;
+    background-color: unset;
+}
+summary:focus{
+    outline: none;
+}

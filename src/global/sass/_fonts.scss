@@ -1,0 +1,15 @@
+$fonts: (
+    400: 'fonts/Montserrat-Regular.ttf',
+    600: 'fonts/Montserrat-SemiBold.ttf',
+    700: 'fonts/Montserrat-Bold.ttf'
+);
+
+@each $bold, $url in $fonts {
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: $bold;
+        font-display: block;
+        src: url($url) format('woff2');
+    }
+} 
