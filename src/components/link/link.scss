@@ -1,0 +1,14 @@
+.link {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    @include font(xs, 500);
+    color: color(main);
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: color(hover);
+    }
+}

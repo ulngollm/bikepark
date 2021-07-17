@@ -15,6 +15,9 @@ $font-sizes: (
     xs: var(--font-xs)
 );
 
-@mixin font($size){
+@mixin font($size, $weight: null){
     font-size: map-get($map: $font-sizes, $key: $size);
+    @if $weight{
+        font-weight: $weight;
+    }
 }

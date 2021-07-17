@@ -1,5 +1,6 @@
 :root{
     --main: #297FFF;
+    --hover: #005EFF;
     --background: #E5E5E5;
     --text: #14233D;
     --text-muted: #ABB1C5;
@@ -7,9 +8,10 @@
 
 $colors: (
     main: var(--main),
+    hover: var(--hover),
     bg: var(--background),
     text: var(--text),
-    text-muted: var(--text-muted)
+    text-muted: var(--text-muted),
 );
 @function color($name){
     @return map-get($map: $colors, $key: $name);

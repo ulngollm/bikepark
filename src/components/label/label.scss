@@ -1,0 +1,4 @@
+.label{
+    @include font(s, 500);
+    color: color(text-muted);
+}

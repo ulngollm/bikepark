@@ -7,12 +7,11 @@
   justify-content: center;
   align-items: center;
 
-  @include font(m);
+  @include font(m, 600);
   text-decoration: none;
   text-align: center;
   white-space: nowrap;
   font-family: inherit;
-  font-weight: bold;
 
   background-color: color(main);
   color: white;
@@ -28,7 +27,7 @@
   &:hover,
   &:active,
   &:focus {
-    background-color: #005EFF;
+    background-color: color(hover);
   }
 
   &_light{
@@ -40,14 +39,10 @@
     }
   }
   &_compact{
-    min-width: unset;
+    min-width: 200px;
     height: 40px;
-    font-weight: normal;
-    text-transform: uppercase;
     @include font(s);
+    text-transform: uppercase;
   }
-
   
-
-
 }
