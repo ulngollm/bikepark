@@ -1,0 +1,5 @@
+mixin tabs(tabs)
+    .tabs&attributes(attributes)
+        each tab in tabs 
+            .tabs__item(class={tabs__item_active: tab.current == true})
+                a.tab__link(href= tab.link)= tab.label 
