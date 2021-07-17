@@ -1,0 +1,19 @@
+extends /layout/template
+block content
+    .form 
+        .form__header
+            +tabs([{label: "Вход", link: "#"}, {label: "Регистрация",link:"#",  current: true}])
+        form.form__body
+            +form-group({label: "Имя*"})(placeholder="Введите имя")
+            +form-group({label: "Номер телефона*"})(placeholder="Введите номер телефона")
+            +form-group({label: "E-mail"})(placeholder="Введите E-mail")
+            +form-group({label: "Пароль*"})(type="password", placeholder="Введите пароль")
+            +checkbox('Согласие на обработку персональных данных')
+            button.button Зарегистрироваться
+        .form__footer 
+            span.label Уже авторизованы? 
+            a.link(href="#") Войти 
+
+
+
+

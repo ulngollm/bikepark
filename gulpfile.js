@@ -13,7 +13,6 @@ const bulkSass = require('gulp-sass-bulk-import');
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
 const mergeQueries = require('postcss-merge-queries');
-const svgSprite = require('gulp-svg-sprite');
 
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
@@ -77,29 +76,9 @@ function watcher() {
 
 }
 
-function icons() {
-    return src('src/components/**/*.svg')
-        .pipe(svgSprite({
-            svg: {
-                xmlDeclaration: false,
-                doctypeDeclaration: false,
-                namespaceIDs: false,
-                namespaceIDPrefix: '',
-                namespaceClassnames: false,
-                dimensionAttributes: true
-            },
-            mode: {
-                symbol: {
-                    dest: './',
-                    sprite: 'icons.svg'
-                }
-            },
-        }))
-        .pipe(dest('build/'));
-}
 
 
 
 exports.server = parallel(server, watcher);
-exports.build = parallel(compileHtml, styles, fonts, icons);
+exports.build = parallel(compileHtml, styles, fonts);
 exports.styles = series(styles);
