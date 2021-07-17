@@ -2,7 +2,7 @@
     display: inline-block;
     text-decoration: underline;
     text-underline-offset: 5px;
-    @include font(xs, 500);
+    @include font(s, 500);
     color: color(main);
     transition: color 0.2s ease-in-out;
 
