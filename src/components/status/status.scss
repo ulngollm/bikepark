@@ -1,0 +1,18 @@
+@import './vars';
+
+.status{
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid;
+    @include font(xs);
+    text-transform: uppercase;
+    font-weight: 600;
+
+    @each $name, $color in $status{
+        &_#{$name} {
+            color: $color;
+        }
+    }
+    
+}

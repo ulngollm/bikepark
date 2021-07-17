@@ -1,0 +1,3 @@
+mixin status(status = "complete")
+    include _vars
+    span.status(class= `status_${status}`)= label[status]

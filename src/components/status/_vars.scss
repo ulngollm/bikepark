@@ -1,0 +1,11 @@
+.status {
+    --process: #FF6B00;
+    --active: #28B737;
+    --pending: #EDAB00;
+}
+$status : (
+    disabled: color(text-muted),
+    process: var(--process),
+    active: var(--active),
+    pending: var(--pending)
+);
