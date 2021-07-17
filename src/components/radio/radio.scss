@@ -1,0 +1,32 @@
+.radio {
+    display: flex;
+    align-items: center;
+    // border: none;
+
+    &__origin {
+        @extend .visually-hidden;
+    }
+
+    &__radio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include box(32px);
+        margin-right: 15px;
+        border-radius: 50%;
+        border: 1px solid color(line);
+        
+        &::after {
+            content: '';
+            display: block;
+            @include box(20px);
+            border-radius: 50%;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+
+    &__origin:checked+&__radio::after {
+        background-color: color(main);
+    }
+
+}

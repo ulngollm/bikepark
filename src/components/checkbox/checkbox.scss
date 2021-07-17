@@ -17,7 +17,7 @@
         }
     }
     &__label{
-        @include font(s, 500);
+        color: inherit;
     }
     
     &__origin:checked + &__checkbox{
