@@ -41,6 +41,10 @@ function fonts() {
     return src('src/fonts/*')
         .pipe(dest('build/fonts/'));
 }
+function assets(){
+    return src('src/components/**/*.png')
+    .pipe(dest('build/img/'))
+}
 
 function styles() {
     const plugins = [
@@ -80,5 +84,5 @@ function watcher() {
 
 
 exports.server = parallel(server, watcher);
-exports.build = parallel(compileHtml, styles, fonts);
+exports.build = parallel(compileHtml, styles, fonts, assets);
 exports.styles = series(styles);

@@ -1,0 +1,17 @@
+.advantage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__caption {
+        position: relative;
+        bottom: 20px;
+        padding-left: 20px;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        min-height: 120px;
+    }
+}

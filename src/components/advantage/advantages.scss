@@ -1,0 +1,28 @@
+@use "sass:color";
+
+.advantages {
+    display: flex;
+    justify-content: flex-end;
+    // overflow: hidden;
+
+    &__item {
+        height: 210px;
+        width: 304px;
+        padding: 20px 30px 0;
+        margin-right: -120px;
+        clip-path: url(#clip);
+
+        &:last-of-type {
+            margin-right: -50px;
+        }
+
+        
+        $color: (#D7E6FF, #B9D5FF, #A5C7FA);
+        @for $i from 1 through length($color) {
+            &:nth-of-type(#{$i}) {
+                background-color: lighten(#297FFF, 38% - 5%*$i);
+                // background-color: nth($list: $color, $n: $i);
+            }
+        }
+    }
+}
