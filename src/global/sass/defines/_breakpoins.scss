@@ -1,0 +1,29 @@
+$breakpoints:(tablet: 1200px,
+    phone: 768px,
+    phone-sm: 375px);
+
+// @each $name,
+// $value in $breakpoints {
+//     @mixin #{$name} {
+//         @media(max-width: $value) {
+//             @content;
+//         }
+//     }
+// }
+
+/*mobile-first, нижняя граница разреешний*/
+// $breakpoints:(
+//     phone-sm: 320,
+//     phone: 375,
+//     tablet: 768,
+//     desktop: 1200,
+// );
+
+@mixin media($name, $isolate: false) {
+    @if($isolate==false) {
+        @media(max-width: map-get($map: $breakpoints, $key: $name)) {
+            @content;
+        }
+    }
+
+}
