@@ -24,5 +24,8 @@
                 // background-color: nth($list: $color, $n: $i);
             }
         }
+        @include media(phone, true){
+            background-color: red;
+        }
     }
 }
