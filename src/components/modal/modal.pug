@@ -1,0 +1,12 @@
+block settings 
+    - const modalId = 1
+.modal__wrapper(data-modal= modalId)
+    .modal__overlay
+    .modal(data-simplebar)
+        button.modal__close.js-close(aria-label="Закрыть")
+            svg.modal__close-icon #[use(href="icons.svg#close")]
+        .modal__inner
+            .modal__header
+                block header
+            .modal__body
+                block body

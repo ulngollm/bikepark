@@ -1,0 +1,112 @@
+.modal {
+    position: relative;
+    margin: auto;
+    max-height: 100%;
+    width: min(800px, 100%);
+    overflow-y: auto;
+    background: white;
+    z-index: 50;
+
+    &[data-simplebar] {
+        overflow: unset;
+    }
+
+    &__inner {
+        margin: $offset-m;
+    }
+
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        display: none;
+        z-index: 10;
+        padding: $offset-m 0;
+
+        @include phone_hrz {
+            padding: 0;
+        }
+
+        &_open {
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 0.2s ease-in;
+        }
+
+        &_closed {
+            animation: fadeOut 0.2s;
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 5;
+    }
+
+    &__close {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        position: absolute;
+        top: $offset-m;
+        right: $offset-m;
+        @include box(40px);
+        border-radius: 50%;
+        z-index: 5;
+        border: none;
+        background: #ECECEC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &-icon {
+            display: block;
+            @include box(30px);
+            flex: 0 0 auto;
+            color: white;
+
+            line {
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke: currentColor;
+            }
+        }
+
+        transition: background-color 0.15s ease-in;
+
+        &:focus {
+            background-color: $color-contrast;
+            outline: none;
+        }
+
+        &:hover {
+            background-color: $color-contrast;
+        }
+    }
+
+    &__header {
+        margin-bottom: $offset-m;
+        padding-right: 2rem;
+        line-height: 2rem;
+
+        &_tabs {
+            display: flex;
+            @include flex-gap($offset-m);
+        }
+
+        &_doctor-info {
+            margin-top: calc(var(--offset-m) * -1);
+            margin-left: calc(var(--offset-m) * -1);
+
+        }
+    }
+}
